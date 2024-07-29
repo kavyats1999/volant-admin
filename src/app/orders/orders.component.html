@@ -1,0 +1,126 @@
+<div class="wrapper">
+    <aside [class.expand]="isSidebarExpanded" id="sidebar">
+        <div class="d-flex">
+            <button (click)="toggleSidebar()" class="toggle-btn" type="button">
+                <i class="lni lni-grid-alt"></i>
+            </button>
+            <div class="sidebar-logo">
+                <a routerLink="/home">VOLANT</a>
+            </div>
+        </div>
+        <ul (click)="toggleSidebar()" class="sidebar-nav">
+            <li class="sidebar-item">
+                <a class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target="#products"
+                    aria-expanded="false" aria-controls="products">
+                    <i class="fa-solid fa-shoe-prints"></i>
+                    <span routerLink="/home">PRODUCTS</span>
+                </a>
+                <ul id="products" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                        <a routerLink="/gents" class="sidebar-link">Gents Sandals</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a routerLink="/ladies" class="sidebar-link">Ladies Sandals</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a routerLink="/childrens" class="sidebar-link">Boys&Girls, Kids Sandals</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target="#orders"
+                    aria-expanded="false" aria-controls="orders">
+                    <i class="lni lni-cart"></i>
+                    <span routerLink="/orders">ORDERS</span>
+                </a>
+                <ul id="orders" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                        <a routerLink="/orders" class="sidebar-link">Orders</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target="#messages"
+                    aria-expanded="false" aria-controls="messages">
+                    <i class="lni lni-envelope"></i>
+                    <span routerLink="/messages">MESSAGES</span>
+                </a>
+                <ul id="messages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                        <a routerLink="/messages" class="sidebar-link">Messages</a>
+                    </li>
+                </ul>
+            </li>
+            <div class="sidebar-footer">
+                <a routerLink="/" class="sidebar-link">
+                    <i class="lni lni-exit"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </ul>
+        
+        
+    </aside>
+    <div class="main">
+        <h3 class="text-end me-5 mt-2 fw-bold">Volant</h3>
+        <div class="page-content page-container" id="page-content">
+            <h3 class="fw-bold fs-5 my-3 ps-4">ORDERS
+            </h3>
+            <div class="padding">
+               
+                <div class="row container d-flex justify-content-center">
+                    <div class="col-lg-8 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Addess</th>
+                                                <th>Phone</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let product of productorder">
+                                                <td>{{product.name}}</td>
+                                                <td>
+                                                    <div>Building Name:{{product.buildingname}}</div>
+                                                    <div>City Name:{{product.cityname}}</div>
+                                                    <div>LandMark:{{product.landmark}}</div>
+                                                    <div>State:{{product.state}}</div>
+                                                    <div>PinCode:{{product.postalcode}}</div>
+
+                                                </td>
+                                                <td class="text-danger"><i class="fa fa-phone"></i> {{product.phone}}
+                                                </td>
+                                                <td><label class=" bg-warning p-1 border rounded">In Progress</label>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row text-body-secondary">
+                    <div class="col-6 text-start ">
+                        <a class="text-body-secondary" href=" #">
+                            <strong>volant</strong>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>

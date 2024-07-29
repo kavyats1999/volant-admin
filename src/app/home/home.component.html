@@ -1,0 +1,190 @@
+
+
+<div class="wrapper">
+    <aside [class.expand]="isSidebarExpanded" id="sidebar">
+        <div class="d-flex">
+            <button (click)="toggleSidebar()" class="toggle-btn" type="button">
+                <i class="lni lni-grid-alt"></i>
+            </button>
+            <div class="sidebar-logo">
+                <a routerLink="/home">VOLANT</a>
+            </div>
+        </div>
+        <ul (click)="toggleSidebar()" class="sidebar-nav">
+            <li class="sidebar-item">
+                <a class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target="#products"
+                    aria-expanded="false" aria-controls="products">
+                    <i class="fa-solid fa-shoe-prints"></i>
+                    <span routerLink="/home">PRODUCTS</span>
+                </a>
+                <ul id="products" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                        <a routerLink="/gents" class="sidebar-link">Gents Sandals</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a routerLink="/ladies" class="sidebar-link">Ladies Sandals</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a routerLink="/childrens" class="sidebar-link">Boys&Girls, Kids Sandals</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target="#orders"
+                    aria-expanded="false" aria-controls="orders">
+                    <i class="lni lni-cart"></i>
+                    <span routerLink="/orders">ORDERS</span>
+                </a>
+                <ul id="orders" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                        <a routerLink="/orders" class="sidebar-link">Orders</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target="#messages"
+                    aria-expanded="false" aria-controls="messages">
+                    <i class="lni lni-envelope"></i>
+                    <span routerLink="/messages">MESSAGES</span>
+                </a>
+                <ul id="messages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                        <a routerLink="/messages" class="sidebar-link">Messages</a>
+                    </li>
+                </ul>
+            </li>
+            <div class="sidebar-footer">
+                <a routerLink="/" class="sidebar-link">
+                    <i class="lni lni-exit"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </ul>
+        
+        
+    </aside>
+    <div class="main">
+        <h3 class="text-end me-5 mt-2 fw-bold">Volant</h3>
+        <!-- <nav class="navbar navbar-expand px-4 py-3">
+            <h3>VOLANT</h3>
+        </nav> -->
+        <main class="content px-3 py-4">
+            <div class="container-fluid">
+                <div class="mb-3">
+                    <h3 class="fw-bold fs-4 mb-3">Admin Dashboard</h3>
+                    <div class="row">
+                        <div class="col-12 col-md-3 mb-4">
+                            <div style="background-color: rgb(113, 157, 68);"
+                                class="card border-0 shadow-sm rounded-3 hover-shadow text-white">
+                                <div class="card-body py-4">
+                                    <h5 class="mb-3 fw-bold">
+                                       Gents Products
+                                    </h5>
+                                    <!-- <p class="mb-2 fw-bold fs-4">
+                                        $72,540
+                                    </p> -->
+                                    <div class="d-flex align-items-center">
+                                        <span class="badge bg-light text-primary me-2">
+                                            +23.0%
+                                        </span>
+                                        <span class="fw-bold text-light">
+                                            Since Last Month
+                                        </span>
+                                    </div>
+                                </div>
+                                <a style="cursor: pointer;"><p routerLink="/gents" class="text-center">view <i class="fa-solid fa-arrow-right"></i></p></a>
+
+
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3 mb-4">
+                            <div style="background-color: rgb(192, 52, 80);"
+                                class="card border-0 shadow-sm rounded-3 hover-shadow  text-white">
+                                <div class="card-body py-4">
+                                    <h5 class="mb-3 fw-bold">
+                                        Ladies Product
+                                    </h5>
+                                    <!-- <p class="mb-2 fw-bold fs-4">
+                                        $72,540
+                                    </p> -->
+                                    <div class="d-flex align-items-center">
+                                        <span class="badge bg-light text-success me-2">
+                                            +25.0%
+                                        </span>
+                                        <span class="fw-bold text-light">
+                                            Since Last Month
+                                        </span>
+                                    </div>
+                                </div>
+                                <a style="cursor: pointer;"><p routerLink="/ladies" class="text-center">view <i class="fa-solid fa-arrow-right"></i></p></a>
+
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3 mb-4">
+                            <div style="background-color: cornflowerblue;"
+                                class="card border-0 shadow-sm rounded-3 hover-shadow text-white">
+                                <div class="card-body py-4">
+                                    <h5 class="mb-3 fw-bold">
+                                       Boys&Girls,Kids
+                                    </h5>
+                                    <!-- <p class="mb-2 fw-bold fs-4">
+                                        $72,540
+                                    </p> -->
+                                    <div class="d-flex align-items-center">
+                                        <span class="badge bg-light text-primary me-2">
+                                           +15.0%
+                                        </span>
+                                        <span class="fw-bold text-light">
+                                            Since Last Month
+                                        </span>
+                                    </div>
+                                </div>
+                                <a style="cursor: pointer;"><p routerLink="/childrens" class="text-center">view <i class="fa-solid fa-arrow-right"></i></p></a>
+
+
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3 mb-4">
+                            <div style="background-color: rgb(184, 24, 128);" class="card border-0 shadow-sm rounded-3 hover-shadow  text-white">
+                                <div class="card-body py-4">
+                                    <h5 class="mb-3 fw-bold">
+                                        Orders
+                                    </h5>
+                                    <!-- <p class="mb-2 fw-bold fs-4">
+                                        $72,540
+                                    </p> -->
+                                    <div class="d-flex align-items-center">
+                                        <span class="badge bg-light text-primary me-2">
+                                           +30.34%
+                                        </span>
+                                        <span class="fw-bold text-light">
+                                            Since Last Month
+                                        </span>
+                                    </div>
+                                </div>
+                                <a style="cursor: pointer;"><p routerLink="/orders" class="text-center">view <i class="fa-solid fa-arrow-right"></i></p></a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="container" style="width: 100%; height: 400px; margin-top: 100px;"></div>
+
+
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row text-body-secondary">
+                    <div class="col-6 text-start ">
+                        <a class="text-body-secondary" href=" #">
+                            <strong>Volant</strong>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>

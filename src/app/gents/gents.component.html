@@ -1,0 +1,200 @@
+
+
+
+
+
+
+
+<div class="wrapper">
+    <aside [class.expand]="isSidebarExpanded" id="sidebar">
+        <div class="d-flex">
+            <button (click)="toggleSidebar()" class="toggle-btn" type="button">
+                <i class="lni lni-grid-alt"></i>
+            </button>
+            <div class="sidebar-logo">
+                <a routerLink="/home">VOLANT</a>
+            </div>
+        </div>
+        <ul (click)="toggleSidebar()" class="sidebar-nav">
+            <li class="sidebar-item">
+                <a class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target="#products"
+                    aria-expanded="false" aria-controls="products">
+                    <i class="fa-solid fa-shoe-prints"></i>
+                    <span routerLink="/home">PRODUCTS</span>
+                </a>
+                <ul id="products" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                        <a routerLink="/gents" class="sidebar-link">Gents Sandals</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a routerLink="/ladies" class="sidebar-link">Ladies Sandals</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a routerLink="/childrens" class="sidebar-link">Boys&Girls, Kids Sandals</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target="#orders"
+                    aria-expanded="false" aria-controls="orders">
+                    <i class="lni lni-cart"></i>
+                    <span routerLink="/orders">ORDERS</span>
+                </a>
+                <ul id="orders" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                        <a routerLink="/orders" class="sidebar-link">Orders</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target="#messages"
+                    aria-expanded="false" aria-controls="messages">
+                    <i class="lni lni-envelope"></i>
+                    <span routerLink="/messages">MESSAGES</span>
+                </a>
+                <ul id="messages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                        <a routerLink="/messages" class="sidebar-link">Messages</a>
+                    </li>
+                </ul>
+            </li>
+            <div class="sidebar-footer">
+                <a routerLink="/" class="sidebar-link">
+                    <i class="lni lni-exit"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </ul>
+        
+        
+    </aside>
+    <div class="main">
+        <h3 class="text-end me-5 mt-2 fw-bold">Volant</h3>
+        <main class="content px-3 py-4">
+            <div class="container-fluid">
+                <div class="mb-3">
+                    <h3 class="fw-bold fs-4 mb-3">Admin Dashboard</h3>
+                    <!-- <div class="row">
+                        <div class="col-12 col-md-4 ">
+                            <div class="card border-0">
+                                <div class="card-body py-4">
+                                    <h5 class="mb-2 fw-bold">
+                                        Memebers Progress
+                                    </h5>
+                                    <p class="mb-2 fw-bold">
+                                        $72,540
+                                    </p>
+                                    <div class="mb-0">
+                                        <span class="badge text-success me-2">
+                                            +9.0%
+                                        </span>
+                                        <span class=" fw-bold">
+                                            Since Last Month
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 ">
+                            <div class="card  border-0">
+                                <div class="card-body py-4">
+                                    <h5 class="mb-2 fw-bold">
+                                        Memebers Progress
+                                    </h5>
+                                    <p class="mb-2 fw-bold">
+                                        $72,540
+                                    </p>
+                                    <div class="mb-0">
+                                        <span class="badge text-success me-2">
+                                            +9.0%
+                                        </span>
+                                        <span class="fw-bold">
+                                            Since Last Month
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 ">
+                            <div class="card border-0">
+                                <div class="card-body py-4">
+                                    <h5 class="mb-2 fw-bold">
+                                        Memebers Progress
+                                    </h5>
+                                    <p class="mb-2 fw-bold">
+                                        $72,540
+                                    </p>
+                                    <div class="mb-0">
+                                        <span class="badge text-success me-2">
+                                            +9.0%
+                                        </span>
+                                        <span class="fw-bold">
+                                            Since Last Month
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <h3 class="fw-bold fs-5 my-3">Gents Products
+                    </h3>
+                    <div class="text-end me-5 mb-5">
+                        <button routerLink="/add-gents" class="btn btn-danger">ADD PRODUCT</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th width="10%" class="id-col"># ID</th>
+                                        <th width="16%" class="title-col">Title</th>
+                                        <th width="15%" class="image-col">Image</th>
+                                        <th width="10%" class="price-col">Price</th>
+                                        <th width="25%" class="description-col">Description</th>
+                                        <th width="12%" class="category-col">Category</th>
+                                        <th width="12%" class="actions-col">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let product of gentsproduct">
+                                        <td class="id-col"># {{ product.id }}</td>
+                                        <td class="title-col">{{ product.title }}</td>
+                                        <td class="image-col">
+                                            <div>
+                                                <img [src]="product.image" width="100px" height="100px" alt="">
+                                            </div>
+                                        </td>
+                                        <td class="price-col">{{ product.price }}</td>
+                                        <td class="description-col">{{ product.description }}</td>
+                                        <td class="category-col">{{ product.category }}</td>
+                                        <td class="actions-col">
+                                            <div class="actions">
+                                                <span routerLink="/product/view/{{product.id}}" class="fa-solid fa-eye fs-5 p-2"></span>
+                                                <span routerLink="/edit-gents/{{product.id}}" class="fa-regular fa-pen-to-square fs-5 p-2"></span>
+                                                <span (click)="deleteProduct(product.id)" class="fa-regular fa-trash-can fs-5 p-2"></span>
+            
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- More rows if necessary -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row text-body-secondary">
+                    <div class="col-6 text-start ">
+                        <a class="text-body-secondary" >
+                            <strong>volant</strong>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
